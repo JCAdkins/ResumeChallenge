@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Description of your backend package",
+  "main": "handler.js",
+  "scripts": {
+    "start": "node handler.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1625.0",
+    "serverless": "^4.0.23",
+    "serverless-express": "^2.0.12"
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^6.0.1",
+    "jest": "^29.7.0",
+    "save": "^2.9.0",
+    "serverless": "^3.38.0"
+  }
+}
