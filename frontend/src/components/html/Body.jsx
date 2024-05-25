@@ -35,11 +35,14 @@ const Body = ({ disable }) => {
             </div>
           </div>
         ))}
-        className="bg-gray-200 font-bold text-lg tracking-widest"
+        className="bg-gray-200 font-bold text-lg trackixng-widest"
       />
       <GenericAccordion
         disabled={disable}
-        sx={{ backgroundColor: "#f0f0f0" }}
+        sx={{
+          backgroundColor: "#f0f0f0",
+          marginTop: "1.5rem" /* 24px */,
+        }}
         expandIcon={<ExpandMoreIcon />}
         title="EMPLOYMENT HISTORY"
         body={
@@ -73,7 +76,7 @@ const Body = ({ disable }) => {
       />
       <GenericAccordion
         disabled={disable}
-        sx={{ backgroundColor: "#f0f0f0" }}
+        sx={{ backgroundColor: "#f0f0f0", marginTop: "1.5rem" /* 24px */ }}
         expandIcon={<ExpandMoreIcon />}
         title="EDUCATION"
         body={
@@ -104,7 +107,7 @@ const Body = ({ disable }) => {
             ))}
           </ul>
         }
-        className=" font-bold text-lg tracking-widest"
+        className="font-bold text-lg tracking-widest"
       />
     </div>
   );
