@@ -1,6 +1,6 @@
 # Cloud Resume Challenge Frontend
 
-url: <a href="https://cloudresumechallenge.dev/" target="_blank" rel="noopener noreferrer">Cloud Resume Challenge</a>
+<a href="https://cloudresumechallenge.dev/" target="_blank" rel="noopener noreferrer">Cloud Resume Challenge</a>
 
 This is the frontend for the Cloud Resume Challenge. It is built using Vite + React.js for all the heavy lifting. The components I've incorporated are from MaterialUI and the styling is achieved using TailwindCSS.
 
