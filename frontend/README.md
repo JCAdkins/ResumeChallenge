@@ -1,6 +1,6 @@
 # Cloud Resume Challenge Frontend
 
-url: [text](https://cloudresumechallenge.dev/)
+url: [Cloud Resume Challenge](https://cloudresumechallenge.dev/)
 
 This is the frontend for the Cloud Resume Challenge. It is built using Vite + React.js for all the heavy lifting. The components I've incorporated are from MaterialUI and the styling is achieved using TailwindCSS.
 
@@ -10,4 +10,4 @@ The website is fairly basic. I have built three web components: Header, Body, Fo
 
 ======================================================================================================================================
 
-I have used multiple internet resources to help with the design of the page. The background image I obtained from here: [text](https://earthsky.org/clusters-nebulae-galaxies/the-awesome-beauty-of-m16-the-eagle-nebula/). The other resources I didn't write down and don't remember but special thanks to anybody that blogs/writes about different and unique solutions to the many frontend needs. I appreciate you!
+I have used multiple internet resources to help with the design of the page. The background image I obtained from here: [Eagle Nebula](https://earthsky.org/clusters-nebulae-galaxies/the-awesome-beauty-of-m16-the-eagle-nebula/). The other resources I didn't write down and don't remember but special thanks to anybody that blogs/writes about different and unique solutions to the many frontend needs. I appreciate you!
