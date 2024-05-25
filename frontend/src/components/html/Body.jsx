@@ -2,10 +2,11 @@ import GenericAccordion from "../GenericAccordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { projects, work_history, education } from "../../assets/Data";
 
-const Body = () => {
+const Body = ({ disable }) => {
   return (
     <div className="w-full">
       <GenericAccordion
+        disabled={disable}
         sx={{ backgroundColor: "#f0f0f0" }}
         expandIcon={<ExpandMoreIcon />}
         title="PROJECTS"
@@ -37,6 +38,7 @@ const Body = () => {
         className="bg-gray-200 font-bold text-lg tracking-widest"
       />
       <GenericAccordion
+        disabled={disable}
         sx={{ backgroundColor: "#f0f0f0" }}
         expandIcon={<ExpandMoreIcon />}
         title="EMPLOYMENT HISTORY"
@@ -70,6 +72,7 @@ const Body = () => {
         className=" font-bold text-lg tracking-widest"
       />
       <GenericAccordion
+        disabled={disable}
         sx={{ backgroundColor: "#f0f0f0" }}
         expandIcon={<ExpandMoreIcon />}
         title="EDUCATION"

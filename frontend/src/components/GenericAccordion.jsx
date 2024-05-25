@@ -3,9 +3,9 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { Typography } from "@mui/material";
 
-const GenericAccordion = ({ title, body, ...props }) => {
+const GenericAccordion = ({ title, body, disabled, ...props }) => {
   return (
-    <Accordion className="my-6">
+    <Accordion disabled={disabled} className="my-6">
       <AccordionSummary
         aria-controls="panel1-content"
         id="panel1-header"
