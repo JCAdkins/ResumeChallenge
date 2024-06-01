@@ -41,9 +41,10 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-east-1'
         S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      working-directory: ./frontend
       run: |
         yarn global add aws-cli
-        aws s3 sync build/ s3://$S3_BUCKET --delete
+        aws s3 sync dist/ s3://$S3_BUCKET --delete
 
     # Backend steps
     - name: Install backend dependencies
