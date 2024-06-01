@@ -6,15 +6,82 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+
+#     strategy:
+#       matrix:
+#         node-version: [18.x]
+#         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+#     steps:
+#     - uses: actions/checkout@v4
+#     - name: Use Node.js ${{ matrix.node-version }}
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: ${{ matrix.node-version }}
+#         cache: 'yarn'
+        
+#     - name: Install dependencies
+#       working-directory: ./frontend
+#       run: yarn install
+      
+#     - name: Build
+#       working-directory: ./frontend
+#       run: yarn build
+#     ## Will implement tests in future updates
+#     # - name: Run tests
+#     #   working-directory: ./frontend
+#     #   run: yarn test
+
+#     - name: Deploy to S3
+#       if: github.ref == 'refs/heads/main'
+#       env:
+#         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         AWS_REGION: 'us-east-1'
+#         S3_BUCKET: ${{ secrets.S3_BUCKET }}
+#       working-directory: ./frontend
+#       run: |
+#         yarn global add aws-cli
+#         aws s3 sync dist/ s3://$S3_BUCKET --delete
+
+#     # Backend steps
+#     - name: Install backend dependencies
+#       working-directory: ./backend
+#       run: yarn install
+      
+#     - name: Run tests
+#       working-directory: ./backend
+#       run: yarn test
+
+#     - name: Add Serverless
+#       working-directory: ./backend
+#       run: yarn global add serverless
+
+#     # - name: Login to Serverless
+#     #   run: serverless login
+#     #   env:
+#     #      SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+#     #      SERVERLESS_SECRET_KEY: ${{ secrets.SERVERLESS_SECRET_KEY }}
+      
+#     - name: Deploy backend
+#       if: github.ref == 'refs/heads/main'
+#       env:
+#         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         AWS_REGION: 'us-east-1'
+#       run: serverless deploy
+#       working-directory: ./backend
+
 jobs:
-  build:
-
+  build_frontend:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v4
@@ -31,11 +98,16 @@ jobs:
     - name: Build
       working-directory: ./frontend
       run: yarn build
-    ## Will implement tests in future updates
-    # - name: Run tests
-    #   working-directory: ./frontend
-    #   run: yarn test
 
+  deploy_frontend:
+    runs-on: ubuntu-latest
+    needs: [build_frontend]
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v4
     - name: Deploy to S3
       if: github.ref == 'refs/heads/main'
       env:
@@ -48,7 +120,13 @@ jobs:
         yarn global add aws-cli
         aws s3 sync dist/ s3://$S3_BUCKET --delete
 
-    # Backend steps
+  test_backend:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+    - uses: actions/checkout@v4
     - name: Install backend dependencies
       working-directory: ./backend
       run: yarn install
@@ -56,14 +134,25 @@ jobs:
     - name: Run tests
       working-directory: ./backend
       run: yarn test
-      
-    - name: Deploy backend
-      if: github.ref == 'refs/heads/main'
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'us-east-1'
-      run: |
-        yarn global add serverless
-        serverless deploy
-      working-directory: ./backend
+
+  deploy_backend:
+      name: production-deploy
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [18.x]
+      steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - name: Install Plugin and Deploy
+        uses: serverless/github-action@v3.2
+        with:
+          args: -c "serverless plugin install --name serverless-dotenv-plugin && serverless plugin install --name serverless-offline && serverless deploy --stage dev"
+          entrypoint: /bin/sh
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
