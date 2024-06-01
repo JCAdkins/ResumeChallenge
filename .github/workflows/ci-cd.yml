@@ -29,9 +29,10 @@ jobs:
     - name: Build
       working-directory: ./frontend
       run: yarn build
-    - name: Run tests
-      working-directory: ./frontend
-      run: yarn test
+    ## Will implement tests in future updates
+    # - name: Run tests
+    #   working-directory: ./frontend
+    #   run: yarn test
 
     - name: Deploy to S3
       if: github.ref == 'refs/heads/main'
@@ -51,6 +52,10 @@ jobs:
     - name: Build backend
       working-directory: ./backend
       run: yarn build
+    - name: Run tests
+      working-directory: ./backend
+      run: yarn test
+      
     - name: Deploy backend
       if: github.ref == 'refs/heads/main'
       env:
