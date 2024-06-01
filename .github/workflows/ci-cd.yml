@@ -64,18 +64,18 @@ jobs:
           node-version: [18.x]
       steps:
         - name: Checkout code
-          uses: actions/checkout@v2
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v2
+          uses: actions/checkout@v4
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
           with:
-            node-version: '14'
+            node-version: ${{ matrix.node-version }}
+            cache: 'yarn'
 
         - name: Install serverless
-          run: npm install -g serverless
+          run: yarn global add serverless
 
         - name: Login to Serverless
-          run: serverless login
+          run: yarn serverless login
           env:
             SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
             SERVERLESS_SECRET_KEY: ${{ secrets.SERVERLESS_SECRET_KEY }}
@@ -88,5 +88,5 @@ jobs:
             AWS_REGION: 'us-east-1'
           run: |
             yarn global add serverless
-            serverless deploy
+            yarn serverless deploy
           working-directory: ./backend
