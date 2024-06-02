@@ -6,11 +6,7 @@ import { Typography } from "@mui/material";
 const GenericAccordion = ({ title, body, ...props }) => {
   return (
     <Accordion>
-      <AccordionSummary
-        aria-controls="panel1-content"
-        id="panel1-header"
-        {...props}
-      >
+      <AccordionSummary {...props}>
         <Typography>{title}</Typography>
       </AccordionSummary>
       <AccordionDetails>{body}</AccordionDetails>

@@ -31,10 +31,15 @@ const Body = ({ disable }) => {
                   ))}
                 </ul>
               </div>{" "}
-              <p className="text-xs">{project.post_comments}</p>
+              <p className="text-xs">
+                <strong>Results: </strong>
+                {project.post_comments}
+              </p>
             </div>
           </div>
         ))}
+        aria-controls="panel1-content"
+        id="panel1-header"
         className="bg-gray-200 font-bold text-lg trackixng-widest"
       />
       <GenericAccordion
@@ -72,6 +77,8 @@ const Body = ({ disable }) => {
             ))}
           </ul>
         }
+        aria-controls="panel2-content"
+        id="panel2-header"
         className=" font-bold text-lg tracking-widest"
       />
       <GenericAccordion
@@ -107,6 +114,8 @@ const Body = ({ disable }) => {
             ))}
           </ul>
         }
+        aria-controls="panel3-content"
+        id="panel3-header"
         className="font-bold text-lg tracking-widest"
       />
     </div>
