@@ -35,7 +35,7 @@ provider:
             - "dynamodb:DeleteItem"
             - "dynamodb:Query"
             - "dynamodb:Scan"
-          Resource: "arn:aws:dynamodb:us-east-1:631193254278:table/YourTableName"
+          Resource: "arn:aws:dynamodb:us-east-1:631193254278:table/ResumeChallenge"
 
 # you can define service wide environment variables here
 #  environment:
