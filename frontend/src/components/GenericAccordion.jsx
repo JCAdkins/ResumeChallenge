@@ -3,13 +3,13 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { Typography } from "@mui/material";
 
-const GenericAccordion = ({ title, body, ...props }) => {
+const GenericAccordion = ({ title, body, detailsStyle = "", ...props }) => {
   return (
     <Accordion>
       <AccordionSummary {...props}>
         <Typography>{title}</Typography>
       </AccordionSummary>
-      <AccordionDetails>{body}</AccordionDetails>
+      <AccordionDetails className={detailsStyle}>{body}</AccordionDetails>
     </Accordion>
   );
 };

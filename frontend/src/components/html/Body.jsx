@@ -1,19 +1,25 @@
+import config from "../../../tailwind.config";
 import GenericAccordion from "../GenericAccordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { projects, work_history, education } from "../../assets/Data";
+import tailwindConfig from "../../../tailwind.config";
+import { Opacity } from "@mui/icons-material";
 
 const Body = ({ disable }) => {
   return (
     <div className="w-full">
       <GenericAccordion
         disabled={disable}
-        sx={{ backgroundColor: "#f0f0f0" }}
-        expandIcon={<ExpandMoreIcon />}
+        sx={{
+          backgroundColor: tailwindConfig.theme.extend.colors.deepGrayBlue,
+          color: tailwindConfig.theme.extend.colors.lightGrayBlue,
+        }}
+        expandIcon={<ExpandMoreIcon className="text-lightGrayBlue" />}
         title="PROJECTS"
         body={projects.map((project, ind) => (
           <div
             key={ind}
-            className="-mx-4 even:bg-gray-200 even:py-1 last:-mb-4"
+            className="-mx-4 even:bg-softGrayBlue even:py-1 last:-mb-4"
           >
             <div className="m-4 space-y-1">
               <p className="text-sm font-bold">{project.title}</p>
@@ -40,25 +46,26 @@ const Body = ({ disable }) => {
         ))}
         aria-controls="panel1-content"
         id="panel1-header"
-        className="bg-gray-200 font-bold text-lg trackixng-widest"
+        className="font-bold text-lg"
       />
       <GenericAccordion
         disabled={disable}
         sx={{
-          backgroundColor: "#f0f0f0",
+          backgroundColor: tailwindConfig.theme.extend.colors.deepGrayBlue,
           marginTop: "1.5rem" /* 24px */,
+          color: tailwindConfig.theme.extend.colors.lightGrayBlue,
         }}
-        expandIcon={<ExpandMoreIcon />}
+        expandIcon={<ExpandMoreIcon className="text-lightGrayBlue" />}
         title="EMPLOYMENT HISTORY"
         body={
           <ul>
             {work_history.map((work, ind) => (
               <li
                 key={ind}
-                className="-mx-4 even:bg-gray-200 even:py-1 last:-mb-4"
+                className="-mx-4 even:bg-softGrayBlue even:py-1 last:-mb-4"
               >
                 <div className="m-4">
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs">
                     {work.start} - {work.end}
                   </p>
                   <p className="text-sm font-bold">
@@ -79,22 +86,26 @@ const Body = ({ disable }) => {
         }
         aria-controls="panel2-content"
         id="panel2-header"
-        className=" font-bold text-lg tracking-widest"
+        className="font-bold text-lg tracking-widest"
       />
       <GenericAccordion
         disabled={disable}
-        sx={{ backgroundColor: "#f0f0f0", marginTop: "1.5rem" /* 24px */ }}
-        expandIcon={<ExpandMoreIcon />}
+        sx={{
+          backgroundColor: tailwindConfig.theme.extend.colors.deepGrayBlue,
+          color: tailwindConfig.theme.extend.colors.lightGrayBlue,
+          marginTop: "1.5rem" /* 24px */,
+        }}
+        expandIcon={<ExpandMoreIcon className="text-lightGrayBlue" />}
         title="EDUCATION"
         body={
           <ul>
             {education.map((edu, ind) => (
               <li
                 key={ind}
-                className="-mx-4 even:bg-gray-200 even:py-1 last:-mb-4"
+                className="-mx-4 even:bg-softGrayBlue even:py-1 last:-mb-4"
               >
                 <div className="m-4">
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs">
                     {edu.start} - {edu.end}
                   </p>
                   <p className="text-sm font-bold">

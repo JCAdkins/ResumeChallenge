@@ -10,11 +10,11 @@ const Header = () => {
             <p>jordan.adkins111@gmail.com</p>
             <p>+13092307966</p>
           </div>
-          <div className="bg-white z-10 space-y-2 py-2 border-y-4 border-black">
+          <div className="bg-white z-10 space-y-2 py-2 border-y-4 border-deepGrayBlue">
             <p className="md:text-2xl lg:text-4xl font-bold tracking-widest">
               JORDAN ADKINS
             </p>
-            <div className="flex">
+            <div className="flex flex-row">
               <div className="flex gap-2 mx-auto">
                 <a
                   href="https://scl.io/bsKFl8E"
@@ -84,7 +84,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="relative space-y-1 pl-6 border-r-4 border-black">
+        <div className="relative space-y-1 pl-6 border-r-4 border-deepGrayBlue">
           <h1 className="font-bold text-lg tracking-widest">
             PROFESSIONAL SUMMARY
           </h1>
@@ -101,7 +101,7 @@ const Header = () => {
           </p>
         </div>
       </div>
-      <div className="absolute -top-10 right-0 border-r-4 border-black h-[80%]"></div>
+      <div className="absolute -top-10 right-0 border-r-4 border-deepGrayBlue h-[80%]"></div>
     </div>
   );
 };

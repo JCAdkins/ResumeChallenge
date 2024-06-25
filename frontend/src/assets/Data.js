@@ -1,7 +1,7 @@
 const unifi_service = {
   start: "JAN 2024",
   end: "PRESENT",
-  title: "Bag Service Agent",
+  title: "Bag Operations Agent",
   company: "Unifi Services",
   location: "Phoenix, AZ, United States",
   duties: [

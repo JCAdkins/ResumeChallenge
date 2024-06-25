@@ -46,7 +46,7 @@ function App() {
   };
 
   return (
-    <div className="relative flex w-full h-full min-h-screen min-w-screen justify-center items-center p-6 overflow-hidden">
+    <div className="relative flex w-full h-full min-h-screen min-w-[500px] justify-center items-center p-6 overflow-hidden">
       <div ref={parallaxRef} className="parallax-bg" />
       <div
         className="bg-white hover:bg-gray-200 rounded-full cursor-pointer fixed top-0 sm:top-1 md:top-2 left-0 sm:left-1 md:left-2 text-xs"
