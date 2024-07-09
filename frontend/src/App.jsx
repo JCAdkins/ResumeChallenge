@@ -3,17 +3,19 @@ import Header from "./components/html/Header";
 import Body from "./components/html/Body";
 import Footer from "./components/html/Footer";
 import "./App.css";
-import { Button, Card } from "@mui/material";
+import { Button, Card, CircularProgress } from "@mui/material";
 import getVisitorCount from "./services/getVisitorCount";
 
 function App() {
   const [views, setViews] = useState(0);
   const [showResume, setShowResume] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const parallaxRef = useRef(null);
 
   useEffect(() => {
     getVisitorCount().then((data) => {
       setViews(data.update);
+      setIsLoading(false);
     });
 
     const handleScroll = () => {
@@ -54,16 +56,12 @@ function App() {
       >
         <Button size="small">{showResume ? <p>Hide</p> : <p>Show</p>}</Button>
       </div>
-      {views ? (
-        <Card
-          variant="outlined"
-          className="fixed top-0 sm:top-1 md:top-2 right-0 sm:right-1 md:right-2 p-0.5 text-xs"
-        >
-          Views: {`${views}`}
-        </Card>
-      ) : (
-        <></>
-      )}
+      <Card
+        variant="outlined"
+        className="fixed top-0 sm:top-1 md:top-2 right-0 sm:right-1 md:right-2 p-0.5 text-xs"
+      >
+        <>Views: {isLoading ? <CircularProgress size={12} /> : <>{views}</>}</>
+      </Card>
       <div
         className={`${
           showResume ? "opacity-100" : "opacity-0"

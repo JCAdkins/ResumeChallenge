@@ -1,9 +1,7 @@
-import config from "../../../tailwind.config";
 import GenericAccordion from "../GenericAccordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { projects, work_history, education } from "../../assets/Data";
 import tailwindConfig from "../../../tailwind.config";
-import { Opacity } from "@mui/icons-material";
 
 const Body = ({ disable }) => {
   return (

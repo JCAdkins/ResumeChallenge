@@ -1,6 +1,20 @@
+const unifi_service_super = {
+  start: "MAY 2024",
+  end: "PRESENT",
+  title: "Bag Operations Supervisor",
+  company: "Unifi Services",
+  location: "Phoenix, AZ, United States",
+  duties: [
+    "Identified and corrected misplaced fault codes to our Phoenix station",
+    "Analyzed causes of failure to deliver passenger luggage and created improvement reports",
+    "Served as a point of contact for passengers with luggage issues",
+    "Collaborated with airlines to develop efficient processes for baggage handling and ensure smooth transfer of luggage between flights",
+  ],
+};
+
 const unifi_service = {
   start: "JAN 2024",
-  end: "PRESENT",
+  end: "MAY 2024",
   title: "Bag Operations Agent",
   company: "Unifi Services",
   location: "Phoenix, AZ, United States",
@@ -108,6 +122,7 @@ const best_buy = {
 };
 
 export const work_history = [
+  unifi_service_super,
   unifi_service,
   self_math_tutor,
   fs_dev,
@@ -147,19 +162,20 @@ const davos_proj = {
 };
 
 const resume_proj = {
-  title: "Social Media and E-Commerce Platform",
+  title: "Cloud Resume Challenge - AWS",
   description:
-    "Developed a comprehensive web application using Vite, Google Cloud Platform (Cloud Run, Cloud Storage, Cloud Functions, Cloud SDK), Google Maps API, RapidAPI, React, JavaScript, Tailwind CSS, and Postman. This platform serves as a hybrid social media and e-commerce platform, offering users a diverse range of functionalities.",
+    "The project was a hands-on initiative designed to enhance and demonstrate cloud computing skills. The challenge involved creating and deploying a personal resume website utilizing various AWS/Cloud services and adhering to best practices in cloud computing.",
   features: [
-    "Social Media Integration: Integrated social media features allowing users to connect with each other, share content, and engage in discussions.",
-    "Podcast Streaming: Implemented podcast streaming functionality, enabling users to listen to podcasts directly within the platform.",
-    "Event Management: Created an event management system where users can view upcoming events, RSVP, and participate in various activities.",
-    "E-Commerce Functionality: Developed an e-commerce module that enables users to browse and purchase merchandise directly from the platform.",
-    "Geolocation Services: Utilized the Google Maps API for geolocation services, enhancing user experience by providing locationbased features.",
-    "Responsive Design: Implemented Tailwind CSS for a responsive and visually appealing user interface across different devices and screen sizes.",
+    "Custom Domain: The website is accessible via a custom domain name, enhancing professionalism and brand identity.",
+    "Global Distribution: Utilized AWS CloudFront to ensure fast content delivery globally.",
+    "Visitor Counter: Integrated a serverless backend to dynamically track and display the number of visitors.",
+    "Responsive Design: The site is designed to be fully responsive, providing an optimal viewing experience across various devices.",
+    "High Availability & Reliability: Hosted on AWS S3 with redundancy and high availability, ensuring the site is always accessible.",
+    "Scalability: Leveraged AWS Lambda and DynamoDB for backend services, ensuring the site can handle an increasing number of visitors without performance degradation.",
+    "Automated Testing & Deployment: Implemented a CI/CD pipeline for automated testing and deployment, ensuring continuous integration and delivery of updates.",
   ],
   post_comments:
-    "This project involved extensive collaboration with team members, including designers and backend developers, to ensure seamless integration of features and optimal performance. Successfully delivered a multifaceted platform that combines social interaction with e-commerce capabilities, catering to diverse user needs.",
+    "The project resulted in a successfully deployed high-performance personal resume website using AWS services. Implemented a serverless backend, automated CI/CD pipeline, and used Infrastructure as Code for resource management. Gained hands-on experience with S3, Route 53, CloudFront, Lambda, DynamoDB, and CloudFormation. Demonstrated proficiency in cloud architecture, scalability, and cost-efficiency.",
 };
 
-export const projects = [davos_proj, resume_proj];
+export const projects = [resume_proj, davos_proj];

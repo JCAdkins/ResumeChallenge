@@ -3,7 +3,7 @@ import { Tooltip } from "@mui/material";
 const Header = () => {
   return (
     <div className="relative">
-      <div className="w-fit h-fit space-y-4">
+      <div className="w-fit h-fit space-y-0">
         <div className="flex flex-row justify-between">
           <div className="flex flex-col justify-evenly leading-5 text-sm py-2 px-4">
             <p>Glendale, AZ, United States</p>
@@ -84,7 +84,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="relative space-y-1 pl-6 border-r-4 border-deepGrayBlue">
+        <div className="relative py-4 space-y-1 pl-4 border-r-4 border-deepGrayBlue">
           <h1 className="font-bold text-lg tracking-widest">
             PROFESSIONAL SUMMARY
           </h1>
