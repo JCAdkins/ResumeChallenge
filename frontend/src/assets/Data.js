@@ -1,6 +1,6 @@
 const unifi_service_super = {
   start: "MAY 2024",
-  end: "PRESENT",
+  end: "SEP 2024",
   title: "Bag Operations Supervisor",
   company: "Unifi Services",
   location: "Phoenix, AZ, United States",
