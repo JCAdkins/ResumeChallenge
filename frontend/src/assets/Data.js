@@ -9,7 +9,7 @@ const unifi_service_super = {
   duties: [
     "Supervised baggage operations with a focus on efficiency and accuracy, fostering a motivated team environment.",
     "Provided guidance and mentorship to team members, promoting a culture of learning and continuous improvement in baggage operations",
-    "Implemented baggage operations procedures that reduced bag handling errors by 20%.",
+    "Implemented baggage operations procedures that reduced bag handling errors by 20%, decreasing the average monthly errors from 50 to 40",
   ],
 };
 
