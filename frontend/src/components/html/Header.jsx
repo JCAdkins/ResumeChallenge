@@ -5,17 +5,20 @@ const Header = () => {
     <div className="relative">
       <div className="w-fit h-fit space-y-0">
         <div className="flex flex-row justify-between">
-          <div className="flex flex-col justify-evenly leading-5 text-sm py-2 px-4">
+          <div className="hidden sm:flex sm:flex-col justify-evenly leading-5 text-sm py-2 px-4">
             <p>Glendale, AZ, United States</p>
             <p>jordan.adkins111@gmail.com</p>
             <p>+13092307966</p>
           </div>
-          <div className="bg-white z-10 space-y-2 py-2 border-y-4 border-deepGrayBlue">
-            <p className="md:text-2xl lg:text-4xl font-bold tracking-widest">
+          <div className="flex flex-col w-full sm:w-fit bg-white z-10 space-y-2 py-2 border-y-4 border-deepGrayBlue">
+            <p className="text-2xl sm:text-lg md:text-xl lg:text-2xl text-center font-bold tracking-widest">
               JORDAN ADKINS
             </p>
-            <div className="flex flex-col md:flex-row">
-              <div className="flex flex-wrap gap-2 mx-auto">
+            <div className="flex flex-col">
+              <p className="text-base lg:text-lg text-center mb-2 tracking-widest">
+                DEVELOPER
+              </p>
+              <div className="flex flex-wrap gap-2 justify-evenly">
                 <a
                   href="https://scl.io/bsKFl8E"
                   target="_blank"
@@ -77,10 +80,13 @@ const Header = () => {
                   />
                 </Tooltip>
               </div>
-
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg text-right tracking-widest">
-                DEVELOPER
-              </p>
+            </div>
+            <div className="flex flex-row w-full justify-evenly">
+              <div className="sm:hidden text-center px-4">
+                <p>Ridgefield, WA, US</p>
+                <p>jordan.adkins111@gmail.com</p>
+                <p>(309)230-7966</p>
+              </div>
             </div>
           </div>
         </div>
