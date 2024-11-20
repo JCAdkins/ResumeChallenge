@@ -14,8 +14,8 @@ const Header = () => {
             <p className="md:text-2xl lg:text-4xl font-bold tracking-widest">
               JORDAN ADKINS
             </p>
-            <div className="flex flex-row">
-              <div className="flex gap-2 mx-auto">
+            <div className="flex flex-col md:flex-row">
+              <div className="flex flex-wrap gap-2 mx-auto">
                 <a
                   href="https://scl.io/bsKFl8E"
                   target="_blank"
