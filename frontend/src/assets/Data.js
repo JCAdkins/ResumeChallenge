@@ -7,10 +7,9 @@ const unifi_service_super = {
   company: "Unifi Services",
   location: "Phoenix, AZ, United States",
   duties: [
-    "Identified and corrected misplaced fault codes to our Phoenix station",
-    "Analyzed causes of failure to deliver passenger luggage and created improvement reports",
-    "Served as a point of contact for passengers with luggage issues",
-    "Collaborated with airlines to develop efficient processes for baggage handling and ensure smooth transfer of luggage between flights",
+    "Supervised baggage operations with a focus on efficiency and accuracy, fostering a motivated team environment.",
+    "Provided guidance and mentorship to team members, promoting a culture of learning and continuous improvement in baggage operations",
+    "Implemented baggage operations procedures that reduced bag handling errors by 20%.",
   ],
 };
 
