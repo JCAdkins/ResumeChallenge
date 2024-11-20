@@ -4,8 +4,8 @@ const AWS = require("aws-sdk");
 // const dynamoDB = new AWS.DynamoDB.DocumentClient();
 let dynamoDB;
 
-module.exports.getVisitorCount = async (event, context, callback) => {
-  dynamoDB = dynamoDB ? dynamoDB : new AWS.DynamoDB.DocumentClient();
+module.exports.getVisitorCount = async (event) => {
+  dynamoDB = dynamoDB ?? new AWS.DynamoDB.DocumentClient();
   try {
     const origin = event.headers.origin;
     // Define parameters for the DynamoDB update
@@ -38,15 +38,7 @@ module.exports.getVisitorCount = async (event, context, callback) => {
     };
 
     // Execute the DynamoDB update
-    const data = await dynamoDB
-      .update(updateParams, function (err, data) {
-        // if (err) {
-        //   console.log("Error", err);
-        // } else {
-        //   console.log("Success", data);
-        // }
-      })
-      .promise();
+    const data = await dynamoDB.update(updateParams, function () {}).promise();
 
     // Extract the updated visitor count from the response
     const visitorCount = data.Attributes ? data.Attributes.Val : 0;
