@@ -29,7 +29,7 @@ const unifi_service = {
 
 const self_math_tutor = {
   start: "APR 2023",
-  end: "PRESENT",
+  end: "MAR 2024",
   title: "Freelance Tutor",
   company: "Self-Employed",
   location: "Phoenix, AZ, United States",
