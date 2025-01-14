@@ -25,7 +25,7 @@ const Body = ({ disable }) => {
                 <strong>Description: </strong>
                 {project.description}
               </p>
-              <div className="text-xs">
+              <div className="text-xs py-2">
                 <p className="font-bold">Key Features: </p>
                 <ul className="list-decimal mx-4">
                   {project.features.map((feature, ind) => (

@@ -6,7 +6,7 @@ const Header = () => {
       <div className="w-fit h-fit space-y-0">
         <div className="flex flex-row justify-between">
           <div className="hidden sm:flex sm:flex-col justify-evenly leading-5 text-sm py-2 px-4">
-            <p>Glendale, AZ, United States</p>
+            <p>Ridgefield, WA, United States</p>
             <p>jordan.adkins111@gmail.com</p>
             <p>+13092307966</p>
           </div>
