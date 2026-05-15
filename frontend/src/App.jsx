@@ -8,7 +8,6 @@ import getVisitorCount from "./services/getVisitorCount";
 
 function App() {
   const [views, setViews] = useState(0);
-  const [showResume, setShowResume] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const parallaxRef = useRef(null);
   const [scrollRate, setScrollRate] = useState(-0.6);
@@ -44,20 +43,9 @@ function App() {
     };
   }, []);
 
-  const toggleShowResume = () => {
-    setShowResume((prevState) => !prevState);
-  };
-
   return (
     <div className="relative flex w-full h-full min-h-screen min-w-[400px] justify-center items-center p-6 overflow-hidden">
       <div ref={parallaxRef} className="parallax-bg" />
-      <Card
-        variant="outlined"
-        className="bg-white hover:bg-gray-200 rounded-lg cursor-pointer fixed top-0 sm:top-1 md:top-2 left-0 sm:left-1 md:left-2 py-0.5 px-5 text-xs"
-        onClick={toggleShowResume}
-      >
-        {showResume ? <p>Hide</p> : <p>Show</p>}
-      </Card>
       <Card
         variant="outlined"
         className="fixed top-0 sm:top-1 md:top-2 right-0 sm:right-1 md:right-2 p-0.5 text-xs"
@@ -65,13 +53,13 @@ function App() {
         <>Views: {isLoading ? <CircularProgress size={12} /> : <>{views}</>}</>
       </Card>
       <div
-        className={`${
-          showResume ? "opacity-100" : "opacity-0"
-        } resume relative bg-white rounded-md flex flex-col items-center py-10 px-12 font-sans subpixel-antialiased shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]`}
+        className={
+          "resume relative bg-white rounded-md flex flex-col items-center py-10 px-12 font-sans subpixel-antialiased shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]"
+        }
       >
         <div className="resume-inner space-y-10">
           <Header />
-          <Body disable={showResume ? false : true} />
+          <Body />
           <Footer />
         </div>
       </div>

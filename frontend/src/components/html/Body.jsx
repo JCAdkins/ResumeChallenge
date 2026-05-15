@@ -15,32 +15,32 @@ const Body = ({ disable }) => {
         expandIcon={<ExpandMoreIcon className="text-lightGrayBlue" />}
         title="PROJECTS"
         body={projects.map((project, ind) => (
-          <div
+          <ul
             key={ind}
             className="-mx-4 even:bg-softGrayBlue even:py-1 last:-mb-4"
           >
-            <div className="m-4 space-y-1">
+            <li className="m-4">
               <p className="text-sm font-bold">{project.title}</p>
-              <p className="text-xs">
-                <strong>Description: </strong>
-                {project.description}
+              <p className="text-xs pt-1">
+                <strong>Tech: </strong>
+                {project.tech}
               </p>
-              <div className="text-xs py-2">
-                <p className="font-bold">Key Features: </p>
-                <ul className="list-decimal mx-4">
-                  {project.features.map((feature, ind) => (
-                    <li key={ind} className="my-1">
+              <div className="text-xs pt-2">
+                <ul className="list-disc mx-4">
+                  {(project.duties || []).map((feature, ind) => (
+                    <li key={ind} className="py-1">
                       {feature}
                     </li>
                   ))}
+                  {/* {project.duties.map((feature, ind) => (
+                    <li key={ind} className="my-1">
+                      {feature}
+                    </li>
+                  ))} */}
                 </ul>
-              </div>{" "}
-              <p className="text-xs">
-                <strong>Results: </strong>
-                {project.post_comments}
-              </p>
-            </div>
-          </div>
+              </div>
+            </li>
+          </ul>
         ))}
         aria-controls="panel1-content"
         id="panel1-header"

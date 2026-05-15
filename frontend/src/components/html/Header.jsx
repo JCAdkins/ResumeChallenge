@@ -6,7 +6,7 @@ const Header = () => {
       <div className="w-fit h-fit space-y-0">
         <div className="flex flex-row justify-between">
           <div className="hidden sm:flex sm:flex-col justify-evenly leading-5 text-sm py-2 px-4">
-            <p>Ridgefield, WA, United States</p>
+            <p>Glen Allen, VA, United States</p>
             <p>jordan.adkins111@gmail.com</p>
             <p>+13092307966</p>
           </div>
@@ -83,7 +83,7 @@ const Header = () => {
             </div>
             <div className="flex flex-row w-full justify-evenly">
               <div className="sm:hidden text-center px-4">
-                <p>Ridgefield, WA, US</p>
+                <p>Ashland, VA, US</p>
                 <p>jordan.adkins111@gmail.com</p>
                 <p>(309)230-7966</p>
               </div>
@@ -95,15 +95,12 @@ const Header = () => {
             PROFESSIONAL SUMMARY
           </h1>
           <p className="text-sm w-[92%]">
-            Developer leveraging a strong foundation in JavaScript, Java,
-            React.js, and Spring to create dynamic software solutions. Through
-            roles ranging from a Freelance Tutor to a Bag Service Agent, this
-            professional has honed an ability to simplify complex problems and
-            foster collaborative improvements, embodying a unique blend of
-            technical expertise and interpersonal skills. With a passion for
-            continuous learning and innovation, this candidate is poised to
-            deliver cutting-edge applications and mentor teams towards achieving
-            collective goals.
+            Full Stack Developer with hands-on experience building
+            production-grade web applications using JavaScript/TypeScript,
+            React, Node.js, PostgreSQL, and cloud platforms. Strong focus on
+            backend architecture, authentication, APIs, and scalable data-driven
+            features. Known for learning quickly, owning projects beginning to
+            end, and shipping reliable systems.
           </p>
         </div>
       </div>

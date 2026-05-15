@@ -1,5 +1,31 @@
 // Data for employment and projects
 
+const the_home_depot = {
+  start: "FEB 2026",
+  end: "CURRENT",
+  title: "Sales Associate",
+  company: "The Home Depot",
+  location: "Ashland, VA, United States",
+  duties: [
+    "Resolved customer issues and supported daily operations in a fast-paced retail environment",
+    "Communicated technical and product information clearly to customers with varying experience levels",
+    "Maintained inventory accuracy and organized merchandise while balancing multiple priorities",
+  ],
+};
+
+const polycon_industries = {
+  start: "SEP 2025",
+  end: "DEC 2025",
+  title: "Utility Packer",
+  company: "Polycon Industries",
+  location: "Winfield, IN, United States",
+  duties: [
+    "Verified and ensure accuracy of production orders",
+    "Adhered strictly to all safety protocols and report safety breakdowns promptly",
+    "Supported efficient plant operations and maintain compliance with quality standards",
+  ],
+};
+
 const unifi_service_super = {
   start: "MAY 2024",
   end: "SEP 2024",
@@ -7,9 +33,9 @@ const unifi_service_super = {
   company: "Unifi Services",
   location: "Phoenix, AZ, United States",
   duties: [
-    "Supervised baggage operations with a focus on efficiency and accuracy, fostering a motivated team environment.",
+    "Supervised baggage operations with a focus on efficiency and accuracy, fostering a motivated team environment",
     "Provided guidance and mentorship to team members, promoting a culture of learning and continuous improvement in baggage operations",
-    "Implemented baggage operations procedures that reduced bag handling errors by 20%, decreasing the average monthly errors from 50 to 40",
+    "Implemented baggage operations procedures that reduced bag handling errors by 20%",
   ],
 };
 
@@ -116,13 +142,15 @@ const best_buy = {
   company: "Best Buy",
   location: "Glendale, AZ, United States",
   duties: [
-    "Utilized knowledge of various mobile devices and accessories to recommend solutions that meet each customer's individual needs and preferences, ultimately enhancing their overall shopping experience at Best Buy",
+    "Utilized knowledge of various mobile devices and accessories to recommend solutions that meet each customer's individual needs and preferences, ultimately enhancing their overall shopping experience",
     "Attended product workshops staying up-to-date on newest technology and trends available",
-    "Demonstrate exceptional interpersonal skills by actively engaging with customers to understand their needs and providing personalized recommendations to drive sales and customer satisfaction at Best Buy",
+    "Demonstrate exceptional interpersonal skills by actively engaging with customers to understand their needs and providing personalized recommendations to drive sales and customer satisfaction",
   ],
 };
 
 export const work_history = [
+  the_home_depot,
+  polycon_industries,
   unifi_service_super,
   unifi_service,
   self_math_tutor,
@@ -146,37 +174,40 @@ export const education = [
   },
 ];
 
-const davos_proj = {
-  title: "Social Media and E-Commerce Platform",
-  description:
-    "Developed a comprehensive web application using Vite, Google Cloud Platform (Cloud Run, Cloud Storage, Cloud Functions, Cloud SDK), Google Maps API, RapidAPI, React, JavaScript, Tailwind CSS, and Postman. This platform serves as a hybrid social media and e-commerce platform, offering users a diverse range of functionalities.",
-  features: [
-    "Social Media Integration: Integrated social media features allowing users to connect with each other, share content, and engage in discussions.",
-    "Podcast Streaming: Implemented podcast streaming functionality, enabling users to listen to podcasts directly within the platform.",
-    "Event Management: Created an event management system where users can view upcoming events, RSVP, and participate in various activities.",
-    "E-Commerce Functionality: Developed an e-commerce module that enables users to browse and purchase merchandise directly from the platform.",
-    "Geolocation Services: Utilized the Google Maps API for geolocation services, enhancing user experience by providing locationbased features.",
-    "Responsive Design: Implemented Tailwind CSS for a responsive and visually appealing user interface across different devices and screen sizes.",
+const photography_blog = {
+  title: "Photography Blog - Full Stack",
+  tech: "Next.js, TypeScript, Express, Python, FastAPI, Prisma, PostgreSQL, Immich API, Docker, TailwindCSS",
+  duties: [
+    "Designed and built a full-stack blogging platform with custom authentication, role-based access (admin/user), and protected admin routes",
+    "Implemented a nested comment system supporting replies, pagination, lazy loading, and accurate total comment counts across threads",
+    "Developed a real-time notification system for comment activity with read/unread state management",
+    "Integrated Immich photo hosting, automatically creating albums for posts with uploaded images and persisting album metadata",
+    "Structured backend APIs using a controller/service architecture to improve maintainability and scalability",
   ],
-  post_comments:
-    "This project involved extensive collaboration with team members, including designers and backend developers, to ensure seamless integration of features and optimal performance. Successfully delivered a multifaceted platform that combines social interaction with e-commerce capabilities, catering to diverse user needs.",
+};
+
+const davos_proj = {
+  title: "Social Media and E-Commerce Platform - Google Cloud Platform (GCP)",
+  tech: "React, TypeScript, Tailwind CSS, GCP (Cloud Run, Functions, Storage), Google Maps API",
+  duties: [
+    "Built frontend features including social sharing, event RSVPs, podcast streaming, and merchandise storefronts",
+    "Integrated Google Maps API to enable geolocation-based features and event discovery",
+    "Developed and deployed backend services using Cloud Run and Cloud Functions",
+    "Implemented responsive UI designs to support mobile and desktop users",
+    " Collaborated on feature planning and architecture to deliver a cohesive, scalable platform",
+  ],
 };
 
 const resume_proj = {
-  title: "Cloud Resume Challenge - AWS",
-  description:
-    "The project was a hands-on initiative designed to enhance and demonstrate cloud computing skills. The challenge involved creating and deploying a personal resume website utilizing various AWS/Cloud services and adhering to best practices in cloud computing.",
-  features: [
-    "Custom Domain: The website is accessible via a custom domain name, enhancing professionalism and brand identity.",
-    "Global Distribution: Utilized AWS CloudFront to ensure fast content delivery globally.",
-    "Visitor Counter: Integrated a serverless backend to dynamically track and display the number of visitors.",
-    "Responsive Design: The site is designed to be fully responsive, providing an optimal viewing experience across various devices.",
-    "High Availability & Reliability: Hosted on AWS S3 with redundancy and high availability, ensuring the site is always accessible.",
-    "Scalability: Leveraged AWS Lambda and DynamoDB for backend services, ensuring the site can handle an increasing number of visitors without performance degradation.",
-    "Automated Testing & Deployment: Implemented a CI/CD pipeline for automated testing and deployment, ensuring continuous integration and delivery of updates.",
+  title: "Cloud Resume Challenge - Amazon Web Services (AWS)",
+  tech: "S3, CloudFront, Route 53, Lambda, DynamoDB, JavaScript, React, Jest, GitHub Actions",
+  duties: [
+    "Built and deployed a serverless resume website using AWS S3, CloudFront, and Route 53 with a custom domain",
+    "Implemented a visitor counter using AWS Lambda and DynamoDB",
+    "Automated infrastructure provisioning and deployments using Infrastructure as Code and GitHub Actions",
+    "Added automated testing to validate application behavior during CI/CD workflows",
+    "Configured global CDN distribution to improve performance and availability",
   ],
-  post_comments:
-    "The project resulted in a successfully deployed high-performance personal resume website using AWS services. Implemented a serverless backend, automated CI/CD pipeline, and used Infrastructure as Code for resource management. Gained hands-on experience with S3, Route 53, CloudFront, Lambda, DynamoDB, and CloudFormation. Demonstrated proficiency in cloud architecture, scalability, and cost-efficiency.",
 };
 
-export const projects = [resume_proj, davos_proj];
+export const projects = [photography_blog, resume_proj, davos_proj];
